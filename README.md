@@ -63,5 +63,8 @@
   /*
     위 서버실행테스트 : npm run server
     서버실행테스트 : http://localhost:3001/surveys
+    위 사이트실행테스트 : npm run start
+    사용자홈페이지 실행테스트 : http://localhost:3000/
+    관리자홈페이지 실행테스트 : http://localhost:3000/admin
   */
 ```

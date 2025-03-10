@@ -1,18 +1,38 @@
+# 앞으로 할 일
+
+- 사용자페이지와 관리자페이지 경로를 분리한다.
+- 사용자페이지+관리자페이지+JSON서버를 코예브 클라우드에 배포한다.
+
 # 실행 환경 :
 
-- 노드 16.14.0버전, npm 8.3.1버전
+- 실습에 사용된 실행 환경: 노드 16.14.0버전, npm 8.3.1버전
 - JSON-SERVER 기술참조 : https://github.com/hackurity01/survey-pie-server
+- 초기에 1번만 npm install 명령으로 사용자페이지+관리자페이지+JSON서버에 필요한 외부 라이브러리를 설치된다.
 
 # VS Code 셋팅 :
 
 - eslint 플러그인(CeateReactApp에 내장됨) : 실시간으로 jsx문법 및 코드 스타일을 검사해 화면에 표시해주는 도구
-  - package.json 파일의 eslintConfig 항목의 속성값 추가로 처리가능(기본값으로 사용)
-- simple-import-sort :
-  - 설치 명령어: npm install --dev eslint-plugin-simple-import-sort
-- Prettier - Code formatter 플러그인 설치 : 문서서식을 자동으로 맞춰주는 도구로 코딩 스타일을 통일성있게 해 준다.
+  - package.json 파일의 eslintConfig 항목속 기본내용으로 그냥 둔다.
+- Prettier-Code formatter 플러그인 설치 : 문서서식을 자동으로 맞춰주는 VS Code의 도구로 코딩 스타일을 통일성있게 해 준다.
   - 플러그인 설치 후 VS Code 파읾메뉴의 설정항목에서
     - formatter로 검색 후 Default Formatter를 Prettier 로 선택한다.
     - save로 검색 후 Format on save 를 체크한다.
+- 기존소스에서 import 순서를 자동으로 정리하는 simple-import-sort는 작동오류때문애 제거하고, 아래 설정내용도 지운다.
+
+  - 라이브러리 제거 명령어: npm uninstall eslint-plugin-simple-import-sort
+
+  ```
+  /* package.json에서 아래 import 순서를 자동으로 정리하는 내용을 제거한다. */
+  "plugins": [
+      "simple-import-sort"
+    ],
+    "rules": {
+      "simple-import-sort/imports": "error",
+      "simple-import-sort/exports": "error"
+    }
+  ```
+
+  - 침고: .eslintrc.json 외부 파일기술 : https://velog.io/@holim0/ESLint-importorder로-import-순서-다루기
 
 # 클라우드 셋팅 및 관리자단 외부라이브러리 의존추가 :
 

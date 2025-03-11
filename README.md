@@ -8,6 +8,7 @@
 
 - 사용자페이지와 관리자페이지 경로를 분리한다.
 - 사용자페이지+관리자페이지+JSON서버를 코예브 클라우드에 배포한다.(실패. 현재는 로컬PC에서 실행가능)
+- JSON-서버시작은 package.json 파일에서 루트의 server.js로 분리 시켰음.
 
 # 실행결과 미리보기
 
@@ -16,7 +17,7 @@
 ```
 /*
     위 서버실행테스트 : npm run server
-    서버실행테스트 : http://localhost:4000/surveys
+    서버실행테스트 : http://localhost:8888/surveys
     위 사이트실행테스트 : npm run start
     사용자홈페이지 실행테스트 : http://localhost:3000/1/0
     관리자홈페이지 실행테스트 : http://localhost:3000/admin
@@ -75,10 +76,10 @@
     /* 아래 JSON-API서버에서 사용하는 외부라이브러리 추가(아래) */
     "json-server": "^0.17.0"
 
-  /* 아래 json-server에서 사용할 실행 명령어 추가 */
+  /* 아래 json-server에서 사용할 실행 명령어 추가 이 부분은 무시한다. 외부 server.js 파일로 분리하였다. */
   "scripts": {
     ...
-    "server": "json-server --watch ./src/server/db.json --port 3001",
+    "server": "json-server --watch ./src/server/db.json --port 8888",
     ...
   }
 ```

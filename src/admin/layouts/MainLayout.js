@@ -22,7 +22,7 @@ function MainLayout({ selectedKeys, children, padding = 45 }) {
         />
         <Menu theme="dark" selectedKeys={selectedKeys} mode="inline">
           <Menu.Item key="list">
-            <Link to="/list">설문조사 관리</Link>
+            <Link to="/admin/list">설문조사 관리</Link>
           </Menu.Item>
         </Menu>
       </Sider>

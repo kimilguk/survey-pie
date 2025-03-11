@@ -217,7 +217,7 @@ npm run start
 
 ```json
 {
-  "surveyId": "{surveyId: String}",
+  "surveyId": "{surveyId: Number}",
   "data": "{answerData: Array}"
 }
 ```

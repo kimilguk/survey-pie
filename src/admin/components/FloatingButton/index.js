@@ -23,8 +23,8 @@ function FloatingButton() {
           isEditPage
             ? putSurvey(survey)
             : postSurvey(survey).then((data) => {
-                navigate(`/builder/${data.id}`);
-              })
+              navigate(`/admin/builder/${data.id}`);
+            })
         }
       >
         저장

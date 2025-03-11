@@ -37,9 +37,8 @@ function ListPage() {
         render: (createdAt) => {
           const time = new Date(createdAt);
 
-          return `${time.getFullYear()}-${
-            time.getMonth() + 1
-          }-${time.getDate()}`;
+          return `${time.getFullYear()}-${time.getMonth() + 1
+            }-${time.getDate()}`;
         },
       },
       {
@@ -48,17 +47,31 @@ function ListPage() {
         key: 'action',
         render: (id) => {
           return (
-            <Button
-              danger
-              onClick={(e) => {
-                deleteSurvey(id).then(() => mutate());
+            <>
+              <Button
+                type='primary' variant='solid'
+                style={{ marginRight: '10px' }}
+                onClick={(e) => {
+                  //navigate(`/survey/${id}/0`);
+                  window.open(`/survey/${id}/0`, '_blank', 'rel=noopener noreferrer');
+                  e.stopPropagation();
+                  e.preventDefault();
+                }}
+              >
+                설문참여
+              </Button>
+              <Button
+                danger
+                onClick={(e) => {
+                  deleteSurvey(id).then(() => mutate());
 
-                e.stopPropagation();
-                e.preventDefault();
-              }}
-            >
-              삭제
-            </Button>
+                  e.stopPropagation();
+                  e.preventDefault();
+                }}
+              >
+                삭제
+              </Button>
+            </>
           );
         },
       },
@@ -77,7 +90,7 @@ function ListPage() {
   return (
     <MainLayout selectedKeys={['list']}>
       <CreateButtonWrapper>
-        <Button onClick={() => navigate('/builder')}>
+        <Button onClick={() => navigate('/admin/builder')}>
           새로운 설문조사 생성
         </Button>
       </CreateButtonWrapper>
@@ -85,7 +98,7 @@ function ListPage() {
         onRow={(record, rowIndex) => {
           return {
             onClick: (event) => {
-              navigate(`/builder/${record.id}`);
+              navigate(`/admin/builder/${record.id}`);
             },
           };
         }}

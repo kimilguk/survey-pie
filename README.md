@@ -7,7 +7,7 @@
 # 20250311
 
 - 사용자페이지와 관리자페이지 경로를 분리한다.
-- 사용자페이지+관리자페이지+JSON서버를 코예브 클라우드에 배포한다.(실패해서 JSON서버만 코예브 클라우드에 배포)
+- 사용자페이지+관리자페이지+JSON서버를 코예브 클라우드에 배포한다.(무료라서 메모리부족으로 실패해서 JSON서버만 코예브 클라우드에 배포)
 - JSON-서버시작은 package.json 파일에서 루트의 server.js로 분리 시켰음.
 - JSON-서버에 등록된 질문모두확인: https://interior-sondra-kimilguk-app-99ae6359.koyeb.app/surveys
 - JSON-서버에 등록된 질문1개확인 : https://interior-sondra-kimilguk-app-99ae6359.koyeb.app/surveys/1

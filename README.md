@@ -1,5 +1,6 @@
 # 앞으로 할 일
 
+- 사용자페이지+관리자페이지+JSON서버를 코예브 클라우드에 배포 재시도.
 - 관리자페이지 접근 권한을 추가한다.
 - 관리자페이지에 설문결과를 표시하는 기능 페이지를 추가한다.
 
@@ -15,7 +16,7 @@
 ```
 /*
     위 서버실행테스트 : npm run server
-    서버실행테스트 : http://localhost:3001/surveys
+    서버실행테스트 : http://localhost:4000/surveys
     위 사이트실행테스트 : npm run start
     사용자홈페이지 실행테스트 : http://localhost:3000/1/0
     관리자홈페이지 실행테스트 : http://localhost:3000/admin

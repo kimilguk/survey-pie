@@ -1,14 +1,18 @@
 # 앞으로 할 일
 
-- 사용자페이지+관리자페이지+JSON서버를 코예브 클라우드에 배포 재시도.
+- 사용자페이지+관리자페이지를 깃 허브 https://kimilguk.github.io/ 에 배포.
 - 관리자페이지 접근 권한을 추가한다.
 - 관리자페이지에 설문결과를 표시하는 기능 페이지를 추가한다.
 
 # 20250311
 
 - 사용자페이지와 관리자페이지 경로를 분리한다.
-- 사용자페이지+관리자페이지+JSON서버를 코예브 클라우드에 배포한다.(실패. 현재는 로컬PC에서 실행가능)
+- 사용자페이지+관리자페이지+JSON서버를 코예브 클라우드에 배포한다.(실패해서 JSON서버만 코예브 클라우드에 배포)
 - JSON-서버시작은 package.json 파일에서 루트의 server.js로 분리 시켰음.
+- JSON-서버에 등록된 질문모두확인: https://interior-sondra-kimilguk-app-99ae6359.koyeb.app/surveys
+- JSON-서버에 등록된 질문1개확인 : https://interior-sondra-kimilguk-app-99ae6359.koyeb.app/surveys/1
+- JSON-서버에 등록된 답변모두확인: https://interior-sondra-kimilguk-app-99ae6359.koyeb.app/answers
+- JSON-서버에 등록된 답변1개확인 : https://interior-sondra-kimilguk-app-99ae6359.koyeb.app/answers/1
 
 # 실행결과 미리보기
 

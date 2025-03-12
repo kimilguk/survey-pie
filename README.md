@@ -1,18 +1,24 @@
 # 앞으로 할 일
 
-- 사용자페이지+관리자페이지를 깃 허브 https://kimilguk.github.io/ 에 배포.
 - 관리자페이지 접근 권한을 추가한다.
 - 관리자페이지에 설문결과를 표시하는 기능 페이지를 추가한다.
 
-# 20250311
+# 작업완료
 
-- 사용자페이지와 관리자페이지 경로를 분리한다.
-- 사용자페이지+관리자페이지+JSON서버를 코예브 클라우드에 배포한다.(무료라서 메모리부족으로 실패해서 JSON서버만 코예브 클라우드에 배포)
-- JSON-서버시작은 package.json 파일에서 루트의 server.js로 분리 시켰음.
-- JSON-서버에 등록된 질문모두확인: https://interior-sondra-kimilguk-app-99ae6359.koyeb.app/surveys
-- JSON-서버에 등록된 질문1개확인 : https://interior-sondra-kimilguk-app-99ae6359.koyeb.app/surveys/1
-- JSON-서버에 등록된 답변모두확인: https://interior-sondra-kimilguk-app-99ae6359.koyeb.app/answers
-- JSON-서버에 등록된 답변1개확인 : https://interior-sondra-kimilguk-app-99ae6359.koyeb.app/answers/1
+- 기존 강의 소스에서 사용자페이지와 관리자페이지 경로를 분리한다.
+  - 기존 설문관리앱, 설문참여앱, JSON서버앱 이렇게 3개로 분리된 앱을 src폴더 내에 admin, home, server폴더로 분리한 후 1개의 앱으로 통합.
+    - 위 3개의 폴더로 분리 후 최상위 루트경로에 public 이동 및 admin, home, server폴더를 src폴더로 감싸준다.
+    - 위 작업 후 소스에서 Routes와 Link 태그 및 navigate() 함수에 /admin/... 경로를 추가하면 된다.
+- ## 사용자페이지+관리자페이지+JSON서버를 코예브 클라우드에 배포한다.(무료라서 메모리부족으로 실패해서 JSON서버만 코예브 클라우드에 배포)
+  - JSON-서버시작은 이 문서 하단의 package.json 파일에서 루트의 server.js로 분리 시켰음.
+  - JSON-서버에 등록된 질문모두확인: https://interior-sondra-kimilguk-app-99ae6359.koyeb.app/surveys
+  - JSON-서버에 등록된 질문1개확인 : https://interior-sondra-kimilguk-app-99ae6359.koyeb.app/surveys/1
+  - JSON-서버에 등록된 답변모두확인: https://interior-sondra-kimilguk-app-99ae6359.koyeb.app/answers
+  - JSON-서버에 등록된 답변1개확인 : https://interior-sondra-kimilguk-app-99ae6359.koyeb.app/answers/1
+- 사용자페이지+관리자페이지를 깃 허브 https://kimilguk.github.io/ 에 배포.
+  - 사용자+관리자 페이지의 JSON서버 경로를 클라우드로 변경 (아래 2개 파일)
+    - 사용자페이지: src\home\services\apis\mainApi.js
+    - 관리자페이지: src\admin\lib\fetcher.js
 
 # 실행결과 미리보기
 
@@ -20,7 +26,7 @@
 
 ```
 /*
-    위 서버실행테스트 : npm run server
+    위 서버실행테스트 : node server.js
     서버실행테스트 : http://localhost:8888/surveys
     위 사이트실행테스트 : npm run start
     사용자홈페이지 실행테스트 : http://localhost:3000/1/0
@@ -60,7 +66,7 @@
 
   - 침고: .eslintrc.json 외부 파일기술 : https://velog.io/@holim0/ESLint-importorder로-import-순서-다루기
 
-# 클라우드 셋팅 및 관리자단 외부라이브러리 의존추가 :
+# 클라우드 셋팅 및 관리자단 외부라이브러리 의존추가 : 아래package.json파일내용
 
 ```
   /* 아래 코예브 클라우드에서 사용할 노드 버전 설정 */
@@ -83,7 +89,7 @@
   /* 아래 json-server에서 사용할 실행 명령어 추가 이 부분은 무시한다. 외부 server.js 파일로 분리하였다. */
   "scripts": {
     ...
-    "server": "json-server --watch ./src/server/db.json --port 8888",
+    "server": "json-server --watch ./src/server/db.json --port 8888", //실행 시 npm run server 로 실행 가능하다.
     ...
   }
 ```

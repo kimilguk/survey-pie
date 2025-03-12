@@ -20,6 +20,7 @@
     - 사용자페이지: src\home\services\apis\mainApi.js
     - 관리자페이지: src\admin\lib\fetcher.js
     - npm run build 명령으로 build 폴더와 실행파일을 생성한 후 build폴더 내부 파일을 kimilguk.github.io 깃 저장소에 업로드 한다.
+    - 위 SPA(Sigle Page Application)앱 깃 저장소에서 SPA 1페이지 소스확인 : https://github.com/kimilguk/kimilguk.github.io
 
 # 실행결과 미리보기(아래)
 

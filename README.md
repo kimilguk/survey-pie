@@ -20,7 +20,7 @@
     - 사용자페이지: src\home\services\apis\mainApi.js
     - 관리자페이지: src\admin\lib\fetcher.js
 
-# 실행결과 미리보기
+# 실행결과 미리보기(아래)
 
 ![image](./git_preview/preview.jpg)
 
@@ -93,3 +93,13 @@
     ...
   }
 ```
+
+# 클라우드에 JSON-서버 설정 : 기존 파이썬 앱을 설문조사 앱에서 사용하는 JSON-서버 앱으로 변경하였다.(아래)
+
+# 코예브 클라우드 수정 전(아래)
+
+![image](./git_preview/koyeb_cloud_old.jpg)
+
+# 코예브 클라우드 수정 후(아래)
+
+![image](./git_preview/koyeb_cloud_new.jpg)

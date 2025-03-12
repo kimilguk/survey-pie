@@ -1,6 +1,6 @@
 import { Button, Table } from 'antd';
 import { useMemo, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import styled from 'styled-components';
 import useSWR from 'swr';
 
@@ -48,18 +48,19 @@ function ListPage() {
         render: (id) => {
           return (
             <>
-              <Button
+              {/* SPA에서 캐시때문에 Link 로 변경<Button
                 type='primary' variant='solid'
                 style={{ marginRight: '10px' }}
                 onClick={(e) => {
-                  //navigate(`/survey/${id}/0`);
-                  window.open(`/survey/${id}/0`, '_blank', 'rel=noopener noreferrer');
+                  navigate(`/survey/${id}/0`);
+                  //window.open(`/survey/${id}/0`, '_blank', 'rel=noopener noreferrer');
                   e.stopPropagation();
                   e.preventDefault();
                 }}
               >
                 설문참여
-              </Button>
+              </Button> */}
+              <Link to="{`/survey/${id}/0`}" style={{ backgroundColor: '#000', marginRight: '10px', padding: '7px 10px', color: '#fff' }}>설문참여</Link>
               <Button
                 danger
                 onClick={(e) => {

@@ -1,4 +1,4 @@
-import { Route, Routes, useLocation } from 'react-router-dom';
+import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 
 import CompletionPage from './home/pages/CompletionPage';
 import SurveyPage from './home/pages/SurveyPage';
@@ -6,9 +6,11 @@ import SurveyPage from './home/pages/SurveyPage';
 import BuilderPage from './admin/pages/BuilderPage';
 import ListPage from './admin/pages/ListPage';
 import styled from 'styled-components';
+import { Button } from 'antd';
 
 function App() {
   const location = useLocation();
+  const navigate = useNavigate();
   if (location.pathname.includes('admin')) {
     return (
       <div className="App">
@@ -33,6 +35,14 @@ function App() {
             <Route path="/survey/:surveyId" element={<SurveyPage />}>
               <Route path=":step" element={<SurveyPage />} />
             </Route>
+            <Route path="/" element={
+              <Button
+                type='primary' variant='solid'
+                style={{ width: '100%', height: '100vh', fontSize: '2rem' }}
+                onClick={() => navigate('/admin')}>
+                설문관리 앱 실행
+              </Button>
+            } />
             <Route path="/admin" element={<ListPage />} />
             <Route path="/admin/list" element={<ListPage />} />
             <Route path="/admin/builder" element={<BuilderPage />} />

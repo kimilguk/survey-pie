@@ -60,7 +60,7 @@ function ListPage() {
               >
                 설문참여
               </Button> */}
-              <Link to="{`/survey/${id}/0`}" style={{ backgroundColor: '#000', marginRight: '10px', padding: '7px 10px', color: '#fff' }}>설문참여</Link>
+              <Link to={`/survey/${id}/0`} style={{ backgroundColor: '#000', marginRight: '10px', padding: '7px 10px', color: '#fff' }}>설문참여</Link>
               <Button
                 danger
                 onClick={(e) => {
@@ -85,7 +85,7 @@ function ListPage() {
   }
 
   if (!data) {
-    return 'loading...';
+    return (<div style={{ height: '100vh', fontSize: '1.2rem', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>loading...코예브 클라우드 무료 서비스는 처음 접속시 인스턴스 자원이 깨어나는데 몇 초가 걸립니다. 잠시만 기다려 주세요^^</div>)
   }
 
   return (

@@ -54,7 +54,9 @@ function ListPage() {
                 style={{ marginRight: '10px' }}
                 onClick={(e) => {
                   navigate(`/survey/${id}/0`);
+                  //window.location.href = `/survey/${id}/0`; //빌드 한 상태에서는 에러
                   //window.location.reload(true); //빌드 한 상태에서는 에러
+                  //window.location.replace(`/survey/${id}/0`); //빌드 한 상태에서는 에러, replace라서 뒤로 가기도 않된다.
                   //window.open(`/survey/${id}/0`, '_blank', 'rel=noopener noreferrer'); //빌드 한 상태에서는 에러
                   e.stopPropagation();
                   e.preventDefault();

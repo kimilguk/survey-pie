@@ -15,6 +15,11 @@
   - JSON-서버에 등록된 질문1개확인 : https://interior-sondra-kimilguk-app-99ae6359.koyeb.app/surveys/1
   - JSON-서버에 등록된 답변모두확인: https://interior-sondra-kimilguk-app-99ae6359.koyeb.app/answers
   - JSON-서버에 등록된 답변1개확인 : https://interior-sondra-kimilguk-app-99ae6359.koyeb.app/answers/1
+  - 코예브 클라우드 무료 계젇 사용자 주의사항(아래)
+  ```
+  코예브 클라우드 무료 서비스 는 1시간 동안 트래픽을 받지 못하면자동으로 자원이 0으로 축소되기 때문에 수면모드에 들어갑니다.
+  단, 웹페이지에 HTTP 접속을하면 클라우드가 깨어나기 때문에 인스턴스 자원이 재개되는 데 몇 초가 걸리고 페이지가 좀 늦게 보입니다.
+  ```
 - 사용자페이지+관리자페이지를 깃 허브 https://kimilguk.github.io/ 에 배포.
   - 사용자+관리자 페이지의 JSON서버 경로를 클라우드로 변경 (아래 2개 파일)
     - 사용자페이지: src\home\services\apis\mainApi.js

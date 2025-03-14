@@ -1,6 +1,6 @@
 import { Button, Table } from 'antd';
 import { useMemo, useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import useSWR from 'swr';
 
@@ -48,28 +48,27 @@ function ListPage() {
         render: (id) => {
           return (
             <>
-              {/* <Button
+              {/* navigate 또는 Link 태그로 이동한 설문참여 화면에서 뒤로가기 한 후 다른 설문참여 화면으로 이동 시 리렌더링이 되지 않아서 하단에 리랜더링 버튼 코드추가 */}
+              <Button
                 type='primary' variant='solid'
                 style={{ marginRight: '10px' }}
                 onClick={(e) => {
                   navigate(`/survey/${id}/0`);
-                  window.location.reload(true);
-                  //window.open(`/survey/${id}/0`, '_blank', 'rel=noopener noreferrer');
+                  //window.location.reload(true); //빌드 한 상태에서는 에러
+                  //window.open(`/survey/${id}/0`, '_blank', 'rel=noopener noreferrer'); //빌드 한 상태에서는 에러
                   e.stopPropagation();
                   e.preventDefault();
                 }}
               >
                 설문참여
-              </Button> */}
-              <Button
-                style={{ border: 'none' }}
-                onClick={(e) => {
-                  window.location.reload(true);
-                  e.stopPropagation();
-                  e.preventDefault();
-                }}>
-                <Link to={`/survey/${id}/0`} style={{ backgroundColor: '#000', marginRight: '10px', padding: '7px 10px', color: '#fff' }}>설문참여</Link>
               </Button>
+              {/* <Link to={`/survey/${id}/0`}
+                onClick={(e) => {
+                  e.stopPropagation();
+                }}
+                style={{ backgroundColor: '#000', marginRight: '10px', padding: '7px 10px', color: '#fff' }}>
+                설문참여
+              </Link> */}
               <Button
                 danger
                 onClick={(e) => {
@@ -86,7 +85,7 @@ function ListPage() {
         },
       },
     ],
-    [mutate],
+    [mutate, navigate],
   );
 
   if (error) {
@@ -100,8 +99,11 @@ function ListPage() {
   return (
     <MainLayout selectedKeys={['list']}>
       <CreateButtonWrapper>
-        <Button onClick={() => navigate('/admin/builder')}>
+        <Button onClick={() => navigate('/admin/builder')} style={{ marginRight: '10px', border: '1px solid red' }}>
           새로운 설문조사 생성
+        </Button>
+        <Button onClick={() => window.location.reload()}>
+          설문참여 중 브러우저 뒤로가기로 다시 설문참여 화면으로 이동 시 기존 선택항목을 모두 리렌더링 할 필요가 있을 때 사용
         </Button>
       </CreateButtonWrapper>
       <Table

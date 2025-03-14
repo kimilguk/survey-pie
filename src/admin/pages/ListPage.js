@@ -102,7 +102,7 @@ function ListPage() {
         <Button onClick={() => navigate('/admin/builder')} style={{ marginRight: '10px', border: '1px solid red' }}>
           새로운 설문조사 생성
         </Button>
-        <Button onClick={() => window.location.reload()}>
+        <Button onClick={() => window.location.replace('/')}>
           설문참여 중 브러우저 뒤로가기로 다시 설문참여 화면으로 이동 시 기존 선택항목을 모두 리렌더링 할 필요가 있을 때 사용
         </Button>
       </CreateButtonWrapper>

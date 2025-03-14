@@ -48,11 +48,12 @@ function ListPage() {
         render: (id) => {
           return (
             <>
-              {/* SPA에서 캐시때문에 Link 로 변경<Button
+              {/* <Button
                 type='primary' variant='solid'
                 style={{ marginRight: '10px' }}
                 onClick={(e) => {
                   navigate(`/survey/${id}/0`);
+                  window.location.reload(true);
                   //window.open(`/survey/${id}/0`, '_blank', 'rel=noopener noreferrer');
                   e.stopPropagation();
                   e.preventDefault();
@@ -60,7 +61,15 @@ function ListPage() {
               >
                 설문참여
               </Button> */}
-              <Link to={`/survey/${id}/0`} style={{ backgroundColor: '#000', marginRight: '10px', padding: '7px 10px', color: '#fff' }}>설문참여</Link>
+              <Button
+                style={{ border: 'none' }}
+                onClick={(e) => {
+                  window.location.reload(true);
+                  e.stopPropagation();
+                  e.preventDefault();
+                }}>
+                <Link to={`/survey/${id}/0`} style={{ backgroundColor: '#000', marginRight: '10px', padding: '7px 10px', color: '#fff' }}>설문참여</Link>
+              </Button>
               <Button
                 danger
                 onClick={(e) => {

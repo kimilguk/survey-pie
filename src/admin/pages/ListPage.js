@@ -29,6 +29,11 @@ function ListPage() {
         title: '제목',
         dataIndex: 'title',
         key: 'title',
+        render: (title) => {
+          return (
+            <span style={{ cursor: 'pointer' }}>{title}</span>
+          );
+        },
       },
       {
         title: '생성일',

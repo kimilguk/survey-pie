@@ -124,15 +124,18 @@
       "id": 3
     }
   ],
-  "todolist": [
+  "todos": [
     {
+      "usreId": 1,
+      "id": 1,
+      "title": "Dart",
+      "completed": false
+    },
+    {
+      "usreId": 1,
+      "id": 2,
       "title": "Flutter",
-      "description": "test",
-      "dueDate": "2025-07-15",
-      "priority": "High",
-      "status": "Not Started",
-      "tags": ["Tag1", "Tag2"],
-      "id": 1
+      "completed": false
     }
   ]
 }

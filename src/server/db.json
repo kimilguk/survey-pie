@@ -126,16 +126,16 @@
   ],
   "todos": [
     {
-      "usreId": 1,
-      "id": 1,
       "title": "Dart",
-      "completed": false
+      "completed": false,
+      "usreId": 1,
+      "id": 1
     },
     {
-      "usreId": 1,
-      "id": 2,
       "title": "Flutter",
-      "completed": false
+      "completed": false,
+      "usreId": 1,
+      "id": 2
     }
   ]
 }

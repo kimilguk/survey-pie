@@ -124,18 +124,5 @@
       "id": 3
     }
   ],
-  "todos": [
-    {
-      "title": "Dart",
-      "completed": false,
-      "usreId": 1,
-      "id": 1
-    },
-    {
-      "title": "Flutter",
-      "completed": false,
-      "usreId": 1,
-      "id": 2
-    }
-  ]
+  "todos": []
 }
